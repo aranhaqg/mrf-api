@@ -6,12 +6,12 @@ class Mutations::CreateDocumentTest < ActiveSupport::TestCase
   end
 
   test 'create a new document' do
+    #User.new(name: 'User', email: 'user@mail.com').save
     document = perform(
       body: 'body',
-      user: User.first,
     )
 
-    assert document.persisted?
-    assert_equal document.body, 'body'
+    assert document[:document].id.present?
+    assert_equal document[:document].body, 'body'
   end
 end

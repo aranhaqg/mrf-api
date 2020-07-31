@@ -1,15 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+document_1:
+  body: 'Document 1'
+  created_by: user_one
+  
 
-one:
-  body: MyText
-  created_be: 
-  to_table: MyString
-  : 
-  }: MyString
-
-two:
-  body: MyText
-  created_be: 
-  to_table: MyString
-  : 
-  }: MyString
+document_2:
+  body: 'Document 2'
+  created_by: user_one
+  
