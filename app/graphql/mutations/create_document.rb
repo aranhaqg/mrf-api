@@ -9,7 +9,7 @@ module Mutations
     def resolve(body: nil)
       document = Document.create!(
         body: body,
-        created_by: User.first,
+        created_by: context[:current_user],
       )
       { document: document }
     end

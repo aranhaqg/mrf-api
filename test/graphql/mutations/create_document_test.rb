@@ -2,13 +2,15 @@ require 'test_helper'
 
 class Mutations::CreateDocumentTest < ActiveSupport::TestCase
   def perform(user: nil, **args)
-    Mutations::CreateDocument.new(object: nil, field: nil, context: {}).resolve(args)
+    Mutations::CreateDocument.new(object: nil, field: nil, context: { current_user: user }).resolve(args)
   end
 
   test 'create a new document' do
-    #User.new(name: 'User', email: 'user@mail.com').save
+    user = users(:user_one)
+    
     document = perform(
-      body: 'body',
+      user: user,
+      body: 'body'
     )
 
     assert document[:document].id.present?
