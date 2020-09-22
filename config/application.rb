@@ -31,5 +31,15 @@ module MrfApi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # config/application.rb
+    # CORS config to allow ajax
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        #resource '*', headers: :any, methods: [:get, :post, :options]
+        resource '/graphql', headers: :any, methods: %i(post)
+      end
+    end
   end
 end

@@ -22,6 +22,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'graphql', '1.9.17'
 gem 'graphiql-rails', '1.7.0', group: :development
 gem 'search_object_graphql', '0.3.2'
+gem 'rack-cors', '1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

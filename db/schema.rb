@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_191349) do
+ActiveRecord::Schema.define(version: 2020_09_22_192740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "document_sharings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "document_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["document_id"], name: "index_document_sharings_on_document_id"
+    t.index ["user_id"], name: "index_document_sharings_on_user_id"
+  end
 
   create_table "documents", force: :cascade do |t|
     t.text "body"
@@ -31,5 +40,7 @@ ActiveRecord::Schema.define(version: 2020_07_30_191349) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "document_sharings", "documents"
+  add_foreign_key "document_sharings", "users"
   add_foreign_key "documents", "users", column: "created_by_id"
 end
