@@ -1,8 +1,8 @@
 module Mutations
   class ShareDocument < BaseMutation
     # arguments passed to the `resolve` method
-    argument :document_id, Integer, required: true
     argument :user_id, Integer, required: true
+    argument :document_id, Integer, required: true
 
     # return type from the mutation
     field :document_sharing, Types::UserType, null: false
@@ -13,6 +13,8 @@ module Mutations
         document_id: document_id,
       )
       { document_sharing: document_sharing }
+    rescue ActiveRecord::RecordInvalid => e
+      GraphQL::ExecutionError.new("Invalid input: #{e.record.errors.full_messages.join(', ')}")
     end
   end
 end

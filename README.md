@@ -12,13 +12,13 @@ Esta API usa:
 Para mais detalhes olhe [Gemfile](Gemfile).
 
 ## Exemplos de mutations 
-### Sign in (logar na API)
+### Sign in Admin (logar na API)
 ```json
 mutation {
   signinUser(input: {
     credentials: {
-      email: "aranhaqg@gmail.com",
-      password: "123456"
+      email: "admin@mrf.com",
+      password: "admin"
     }
   }){
     user{

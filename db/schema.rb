@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_192740) do
   create_table "document_sharings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "document_id", null: false
+    t.boolean "created_by_user", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["document_id"], name: "index_document_sharings_on_document_id"
@@ -26,10 +27,8 @@ ActiveRecord::Schema.define(version: 2020_09_22_192740) do
 
   create_table "documents", force: :cascade do |t|
     t.text "body"
-    t.bigint "created_by_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["created_by_id"], name: "index_documents_on_created_by_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +41,4 @@ ActiveRecord::Schema.define(version: 2020_09_22_192740) do
 
   add_foreign_key "document_sharings", "documents"
   add_foreign_key "document_sharings", "users"
-  add_foreign_key "documents", "users", column: "created_by_id"
 end

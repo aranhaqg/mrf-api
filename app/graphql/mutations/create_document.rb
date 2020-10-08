@@ -7,11 +7,20 @@ module Mutations
     field :document, Types::DocumentType, null: false
 
     def resolve(body: nil)
-      document = Document.create!(
-        body: body,
-        created_by: context[:current_user],
-      )
-      { document: document }
+      Document.transaction do
+        @document = Document.create!(
+          body: body,
+        )
+        document_id = @document.id
+        @document_sharing = DocumentSharing.create!(
+          document_id: document_id,
+          user_id: context[:current_user].id,
+          created_by_user: true,
+        )
+      end
+      { document: @document, document_sharing: @document_sharing }
+    rescue ActiveRecord::RecordInvalid => e
+      GraphQL::ExecutionError.new("Invalid input: #{e.record.errors.full_messages.join(', ')}")
     end
   end
 end
