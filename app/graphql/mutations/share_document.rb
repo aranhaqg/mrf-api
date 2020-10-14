@@ -5,7 +5,7 @@ module Mutations
     argument :document_id, Integer, required: true
 
     # return type from the mutation
-    field :document_sharing, Types::UserType, null: false
+    field :document_sharing, Types::DocumentSharingType, null: false
 
     def resolve(document_id: nil, user_id: nil)
       document_sharing = DocumentSharing.create!(

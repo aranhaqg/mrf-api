@@ -5,6 +5,7 @@ module Mutations
 
     # return type from the mutation
     field :document, Types::DocumentType, null: false
+    field :document_sharing, Types::DocumentSharingType, null: false
 
     def resolve(body: nil)
       Document.transaction do
