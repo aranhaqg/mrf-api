@@ -8,7 +8,7 @@
 
 admin = User.new(
   name: 'admin',
-  email: 'admin@mrf.com',
+  email: 'admin@fab.mil.br',
   password: 'admin'
 )
 admin.save if admin.valid?
