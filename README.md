@@ -29,6 +29,28 @@ mutation {
   }
 }
 ```
+### Create User (criar novo usuário)
+```json
+mutation {
+  createUser(
+    input: {
+      name: "Priscila Aranha",
+      authProvider: {
+        credentials: {
+          email: "aranha@mrf.com",
+          password: "123456"
+        }
+      }
+    }
+  ){
+    user{
+      id
+      name
+      email
+    }
+  }
+}
+```
 
 ## Exemplos de Queries
 ```json
