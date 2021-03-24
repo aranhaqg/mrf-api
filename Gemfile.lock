@@ -190,7 +190,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
-  brakeman
+  brakeman (= 4.10.0)
   byebug
   graphiql-rails (= 1.7.0)
   graphql (= 1.9.17)

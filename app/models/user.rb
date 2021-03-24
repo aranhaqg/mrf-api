@@ -5,6 +5,6 @@ class User < ApplicationRecord
   validates :email,
     presence: true,
     uniqueness: { case_sensitive: false },
-    format: { with: /\A[A-Za-z0-9._%+-]+@fab.mil.br/, message: "Email invalid"  },
+    format: { with: /\A[A-Za-z0-9._%+-]+@fab.mil.br/, message: "invalid"  },
     length: { minimum: 4, maximum: 254 }         
 end

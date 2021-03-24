@@ -4,5 +4,6 @@ module Types
     field :create_document, mutation: Mutations::CreateDocument
     field :signin_user, mutation: Mutations::SignInUser
     field :share_document, mutation: Mutations::ShareDocument
+    field :delete_document, mutation: Mutations::DeleteDocument
   end
 end

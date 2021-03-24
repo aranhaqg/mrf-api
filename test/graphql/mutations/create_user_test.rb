@@ -6,7 +6,7 @@ class Mutations::CreateUserTest < ActiveSupport::TestCase
   end
 
   test 'create new user' do
-    user = perform(
+    response = perform(
       name: 'Test User',
       auth_provider: {
         credentials: {
@@ -16,8 +16,8 @@ class Mutations::CreateUserTest < ActiveSupport::TestCase
       }
     )
 
-    assert user[:user].id.present?
-    assert_equal user[:user].name, 'Test User'
-    assert_equal user[:user].email, 'email@example.com'
+    assert response[:user].id.present?
+    assert_equal response[:user].name, 'Test User'
+    assert_equal response[:user].email, 'email@example.com'
   end
 end

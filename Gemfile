@@ -24,7 +24,7 @@ gem 'graphiql-rails', '1.7.0', group: :development
 gem 'search_object_graphql', '0.3.2'
 gem 'rack-cors', '1.1.1'
 gem 'pdfkit', '0.8.4.3.2'
-gem 'brakeman'
+gem 'brakeman', '4.10.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
