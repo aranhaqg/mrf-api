@@ -10,7 +10,7 @@ class Mutations::CreateUserTest < ActiveSupport::TestCase
       name: 'Test User',
       auth_provider: {
         credentials: {
-          email: 'email@example.com',
+          email: 'email@fab.mil.br',
           password: '[omitted]'
         }
       }
@@ -18,6 +18,6 @@ class Mutations::CreateUserTest < ActiveSupport::TestCase
 
     assert response[:user].id.present?
     assert_equal response[:user].name, 'Test User'
-    assert_equal response[:user].email, 'email@example.com'
+    assert_equal response[:user].email, 'email@fab.mil.br'
   end
 end
