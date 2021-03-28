@@ -20,7 +20,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'graphql', '1.9.17'
-gem 'graphiql-rails', '1.7.0', group: :development
+gem 'graphiql-rails', '1.7.0'
 gem 'search_object_graphql', '0.3.2'
 gem 'rack-cors', '1.1.1'
 gem 'pdfkit', '0.8.4.3.2'
