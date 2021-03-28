@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+# gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -25,6 +25,7 @@ gem 'search_object_graphql', '0.3.2'
 gem 'rack-cors', '1.1.1'
 gem 'pdfkit', '0.8.4.3.2'
 gem 'brakeman', '4.10.0'
+gem "passenger"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
