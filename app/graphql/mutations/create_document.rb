@@ -1,5 +1,6 @@
 module Mutations
   class CreateDocument < BaseMutation
+    include AuthenticableApiUser
     # arguments passed to the `resolve` method
     argument :body, String, required: true
 
@@ -8,6 +9,7 @@ module Mutations
     field :document_sharing, Types::DocumentSharingType, null: false
 
     def resolve(body: nil)
+      ready?
       @document = Document.create!(
         body: body
       )

@@ -1,5 +1,7 @@
 module Mutations
   class DeleteDocument < BaseMutation
+    include AuthenticableApiUser
+    
     # arguments passed to the `resolve` method
     argument :document_id, Integer, required: true
 
@@ -7,6 +9,7 @@ module Mutations
     field :is_deleted, Boolean, null: false
 
     def resolve(document_id: nil)
+      ready?
       delete_document = Document.find(
         document_id
       )
