@@ -10,7 +10,7 @@ Esta API usa:
 * GraphQL 1.9.17
 
 Para mais detalhes olhe [Gemfile](Gemfile).
-## Exemplos de mutations 
+## Exemplos de mutations
 Antes de fazer qualquer mutation ou query é necessário logar com um usuário. O usuário Admin é um usuário padrão criado para o teste da API. O exemplo de signing mutation com este usuário segue abaixo.
 ### Sign in com usuário Admin (logar na API)
 ```json
@@ -54,7 +54,7 @@ mutation {
 ### Criar documento MRF (Minuta de Relatório Final)
 ```json
 mutation {
-  createDocument(input: { body: "body" }){
+  createDocument(input: { body: "<h1>body</h1>" }){
     document {
       id
     }
@@ -68,6 +68,24 @@ mutation {
   }
 }
 ```
+### Exportar MRF para PDF
+```json
+mutation {
+  createDocument(input: { body: "<h1>body</h1>" }){
+    document {
+      id
+    }
+    documentSharing {
+      id
+      user {
+        name
+      }
+      createdByUser
+    }
+  }
+}
+```
+
 ## Exemplos de Queries
 ```json
 {
@@ -78,8 +96,3 @@ mutation {
 }
 
 ```
-
-
-
-
-

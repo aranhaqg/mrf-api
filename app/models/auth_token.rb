@@ -18,7 +18,7 @@ module AuthToken
 
   def crypt
     ActiveSupport::MessageEncryptor.new(
-      Rails.application.secret_key_base.byteslice(0..31)
+      Rails.application.credentials.secret_key_base.byteslice(0..31)
     )
   end
 end

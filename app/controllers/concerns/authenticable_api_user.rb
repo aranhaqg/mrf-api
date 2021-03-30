@@ -11,7 +11,7 @@ module AuthenticableApiUser
 
   def unauthorized_error
     options = { status: :unauthorized, code: 401 }
-    
+
     GraphQL::ExecutionError.new('Unauthorized user. Signing before continue.', options: options)
   end
 end
