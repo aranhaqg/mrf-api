@@ -3,16 +3,19 @@ class Document < ApplicationRecord
 
   validates :body, presence: true
   def pdf_url
-    pdf = WickedPdf.new.pdf_from_string(self.body)
-    
+    pdf = generate_pdf
     file_name = "/#{self.id}.pdf"
-    
-    overlay = Tempfile.new(file_name)
-    overlay.binmode
-    overlay.write(pdf)
-    overlay.close
-    overlay.path
 
-    upload_file(overlay.path, file_name)
+    upload_file(pdf.path, file_name)
+  end
+
+  def generate_pdf
+    pdf = WickedPdf.new.pdf_from_string(self.body)
+
+    temp_file = Tempfile.new(["#{self.id}", ".pdf"], Rails.root.join('tmp'))
+    temp_file.binmode
+    temp_file.write(pdf)
+    temp_file.close
+    temp_file
   end
 end

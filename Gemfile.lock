@@ -1121,6 +1121,10 @@ GEM
     choice (0.2.0)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     ffi (1.15.0)
     ffi (1.15.0-java)
@@ -1274,6 +1278,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   brakeman (= 4.10.0)
   byebug
+  dotenv-rails
   graphiql-rails (= 1.7.0)
   graphql (= 1.9.17)
   jbuilder (~> 2.7)

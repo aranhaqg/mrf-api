@@ -7,10 +7,10 @@ module S3FileUploader
 
   def upload_file(file_path, file_name)
     name = File.basename file_name
-    
+
     object = S3_BUCKET.object(name)
 
-    if object.upload_file(file_name)
+    if object.upload_file(file_path)
       object.public_url
     else
       file_upload_error
@@ -21,4 +21,3 @@ module S3FileUploader
     GraphQL::ExecutionError.new('Error uploading file.')
   end
 end
-  
