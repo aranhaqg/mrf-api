@@ -13,7 +13,7 @@ module Mutations
         document = Document.find(
           document_id
         )
-        { public_url: document.export_pdf }
+        { public_url: document.pdf_url }
       rescue ActiveRecord::RecordInvalid => e
         GraphQL::ExecutionError.new("Invalid input: #{e.record.errors.full_messages.join(', ')}")
       end
