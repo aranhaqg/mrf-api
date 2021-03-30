@@ -23,10 +23,10 @@ gem 'graphql', '1.9.17'
 gem 'graphiql-rails', '1.7.0'
 gem 'search_object_graphql', '0.3.2'
 gem 'rack-cors', '1.1.1'
-gem 'pdfkit', '0.8.4.3.2'
 gem 'brakeman', '4.10.0'
-gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf', '2.1.0'
+gem 'wkhtmltopdf-binary', '0.12.6.5'
+gem 'aws-sdk', '3.0.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
