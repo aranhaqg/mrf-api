@@ -71,7 +71,7 @@ mutation {
 ### Exportar MRF para PDF
 ```json
 mutation {
-  createDocument(input: { body: "<h1>body</h1>" }){
+  createDocument(input: { body: "<h1>Ahoy!</h1>" }){
     document {
       id
     }
