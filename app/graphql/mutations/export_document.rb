@@ -1,13 +1,13 @@
 module Mutations
     class ExportDocument < BaseMutation
       include AuthenticableApiUser
-      
+
       # arguments passed to the `resolve` method
       argument :document_id, Integer, required: true
-  
+
       # return type from the mutation
-      field :public_url, Boolean, null: false
-  
+      field :public_url, String, null: false
+
       def resolve(document_id: nil)
         ready?
         document = Document.find(
