@@ -17,8 +17,9 @@ module AuthToken
   end
 
   def crypt
-    ActiveSupport::MessageEncryptor.new(
-      Rails.application.credentials.secret_key_base.byteslice(0..31)
-    )
+    secret = Rails.application.credentials.secret_key_base if ['development', 'test'].include? ENV['RAILS_ENV']
+    secret = Rails.application.secret_key_base if ENV['RAILS_ENV'] == 'production'
+
+    ActiveSupport::MessageEncryptor.new(secret.byteslice(0..31))
   end
 end
