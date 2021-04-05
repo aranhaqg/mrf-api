@@ -4,6 +4,9 @@ module AuthenticableApiUser
   private
 
   def ready?(*)
+    # Remove after
+    #context[:current_user] = User.first unless context[:current_user]
+
     return true if context[:current_user]
 
     raise unauthorized_error
