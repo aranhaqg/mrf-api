@@ -1,5 +1,6 @@
 class Document < ApplicationRecord
   include S3FileUploader
+  has_many :document_sharings
 
   validates :body, presence: true
   def pdf_url
@@ -17,5 +18,11 @@ class Document < ApplicationRecord
     temp_file.write(pdf)
     temp_file.close
     temp_file
+  end
+
+  def is_accessible_by_user(user_id)
+    return true if DocumentSharing.where(document_id: id, user_id: user_id).any?
+
+    false
   end
 end
