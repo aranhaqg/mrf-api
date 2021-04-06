@@ -13,7 +13,7 @@ Para mais detalhes olhe [Gemfile](Gemfile).
 ## Exemplos de mutations
 Antes de fazer qualquer mutation ou query é necessário logar com um usuário. O usuário Admin é um usuário padrão criado para o teste da API. O exemplo de signing mutation com este usuário segue abaixo.
 ### Sign in com usuário Admin (logar na API)
-```json
+```graphql
 mutation {
   signinUser(input: {
     credentials: {
@@ -30,7 +30,7 @@ mutation {
 }
 ```
 ### Criar usuário (criar novo usuário)
-```json
+```graphql
 mutation {
   createUser(
     input: {
@@ -52,7 +52,7 @@ mutation {
 }
 ```
 ### Criar documento MRF (Minuta de Relatório Final)
-```json
+```graphql
 mutation {
   createDocument(input: { body: "<h1>body</h1>" }){
     document {
@@ -69,7 +69,7 @@ mutation {
 }
 ```
 ### Exportar MRF para PDF
-```json
+```graphql
 mutation {
   createDocument(input: { body: "<h1>Ahoy!</h1>" }){
     document {
@@ -87,7 +87,7 @@ mutation {
 ```
 
 ## Exemplos de Queries
-```json
+```graphql
 {
   allDocuments{
     id
