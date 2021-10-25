@@ -125,3 +125,4 @@ mutation {
 }
 
 ```
+Acesse a interface gráfica GraphiQl para ver todas as _mutations_ e _queries_ disponíveis.
