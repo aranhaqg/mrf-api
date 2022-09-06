@@ -1157,7 +1157,7 @@ GEM
       racc (~> 1.4)
     pg (1.2.3)
     racc (1.6.0)
-    rack (2.2.3)
+    rack (2.2.4)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
     rack-test (1.1.0)
@@ -1252,15 +1252,15 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   brakeman (= 4.10.0)
   byebug
-  dotenv-rails
+  dotenv-rails (>= 2.7.6)
   graphiql-rails (= 1.7.0)
   graphql (= 1.9.17)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   rack-cors (= 1.1.1)
-  rails (~> 6.0.3, >= 6.0.3.5)
-  rails-erd (>= 1.6.0)
+  rails (~> 6.0.3, >= 6.0.3.6)
+  rails-erd (>= 1.6.1)
   sass-rails (>= 6.0.0)
   search_object_graphql (= 0.3.2)
   spring
