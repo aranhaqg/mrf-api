@@ -1136,7 +1136,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
-    jmespath (1.4.0)
+    jmespath (1.6.1)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -1255,7 +1255,7 @@ DEPENDENCIES
   dotenv-rails (>= 2.7.6)
   graphiql-rails (= 1.7.0)
   graphql (= 1.9.17)
-  jbuilder (~> 2.7)
+  jbuilder (~> 2.11, >= 2.11.2)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   rack-cors (= 1.1.1)
@@ -1266,7 +1266,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
-  web-console (>= 4.0.4)
+  web-console (>= 4.1.0)
   wicked_pdf (= 2.1.0)
   wkhtmltopdf-binary (= 0.12.6.5)
 
