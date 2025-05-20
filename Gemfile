@@ -22,7 +22,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'graphql', '1.9.17'
 gem 'graphiql-rails', '1.7.0'
 gem 'search_object_graphql', '0.3.2'
-gem 'rack-cors', '1.1.1'
+gem 'rack-cors', '3.0.0'
 gem 'brakeman', '4.10.0'
 gem 'wicked_pdf', '2.1.0'
 gem 'wkhtmltopdf-binary', '0.12.6.5'
