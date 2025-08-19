@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.1'
 gem 'dotenv-rails', '>= 2.7.6', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.5', '>= 6.0.5.1'
+gem 'rails', '~> 7.1.5', '>= 7.1.5.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -40,7 +40,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rails-erd', '>= 1.6.1'
+  gem 'rails-erd', '>= 1.7.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
