@@ -26,7 +26,7 @@ gem 'rack-cors', '1.1.1'
 gem 'brakeman', '4.10.0'
 gem 'wicked_pdf', '2.1.0'
 gem 'wkhtmltopdf-binary', '0.12.6.5'
-gem 'aws-sdk', '3.0.2'
+gem 'aws-sdk', '3.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
